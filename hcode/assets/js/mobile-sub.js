@@ -59,11 +59,29 @@ $(document).ready(function() {
     $(this).addClass('moved');
   });
 
-  $('.btn_plus').on('click', function() {
+  $('.btn_plus').on('mouseenter mouseleave', function(e) {
     var idx = $(this).index();
     $(this).toggleClass('on');
     $(this).closest('.tool_btns').next('.tool_layers').find('.img_txt').eq(idx).toggleClass('on');
+
+   
+    (e.type == 'mouseenter') ? $('.tool_layers').show() : $('.tool_layers').hide();
+    return false;
+    
   });
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   $('.ico_arr').on('tapmove', function() {
     $(this).addClass('hide');
