@@ -1,4 +1,17 @@
 $(document).ready(function() {
+  
+  var slickOpt = {
+    vertical: true,
+    verticalSwiping: true,
+    arrows: false,
+    infinite: false,
+    speed: 500
+  }
+  $('.main_slide').slick(slickOpt);
+  // $('.main_slide').on('afterChange', function(event, slick, direction) {
+  //   console.log('change!')
+  // });
+
   var prdSlide = new Swiper('.prd_slide', {
     initialSlide: 1,
     effect: 'cube',
@@ -43,7 +56,7 @@ $(document).ready(function() {
     var firstSlideIdx = prdSlide[0].activeIndex; 
     var secondSlideIdx = prdSlide[1].activeIndex; 
 
-    return firstSlideIdx === 1 && secondSlideIdx === 1 ? $('.txt_scroll').show() : $('.txt_scroll').hide();
+    return firstSlideIdx === 1 && secondSlideIdx === 1 ? $('.main_slide').slick('slickSetOption', 'swipe', true) : $('.main_slide').slick('slickSetOption', 'swipe', false);
   }
 
   var subSlide = new Swiper('.sub_slide', {
@@ -70,7 +83,47 @@ $(document).ready(function() {
     
   });
 
+  (function() {
+    $('#prd1_sel01').on('change', function() {
+      $('.main_slide').slick('slickGoTo', 1, true);
+      prdSlide[1].slideTo(0, false);
+      prdSlide[0].slideTo(1, false);
 
+      $(this).val(0);
+    });
+    $('#prd1_sel02').on('change', function() {
+      $('.main_slide').slick('slickGoTo', 1, true);
+      prdSlide[1].slideTo(2, false);
+      prdSlide[0].slideTo(1, false);
+
+      $(this).val(0);
+    });
+    $('#prd1_sel03').on('change', function() {
+      $('.main_slide').slick('slickGoTo', 1, true);
+      prdSlide[1].slideTo(3, false);
+      prdSlide[0].slideTo(1, false);
+      $(this).val(0);
+    });
+
+    $('#prd2_sel01').on('change', function() {
+      $('.main_slide').slick('slickGoTo', 0, true);
+      prdSlide[0].slideTo(0, false);
+      prdSlide[1].slideTo(1, false);      
+      $(this).val(0);
+    });
+    $('#prd2_sel02').on('change', function() {
+      $('.main_slide').slick('slickGoTo', 0, true);
+      prdSlide[0].slideTo(2, false);
+      prdSlide[1].slideTo(1, false);      
+      $(this).val(0);
+    });
+    $('#prd2_sel03').on('change', function() {
+      $('.main_slide').slick('slickGoTo', 0, true);
+      prdSlide[0].slideTo(3, false);
+      prdSlide[1].slideTo(1, false);      
+      $(this).val(0);
+    });
+  })();
 
 
 
