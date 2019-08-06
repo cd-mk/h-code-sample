@@ -74,8 +74,17 @@
   background: #141216;
 }
 .prd_slide .video_item {
+  position: relative;
+  top: -1%;
+  margin-top: 96px;
   height: 100vh;
   background: #141216;
+}
+.prd_slide .header_video {
+  position: absolute;
+  left: 0; top: 0;
+  width: 100%;
+  z-index: 99;
 }
 .sub_slide {
   position: absolute;
