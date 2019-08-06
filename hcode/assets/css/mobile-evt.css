@@ -56,8 +56,8 @@
   opacity: 0;
 }
 .prd_slide {
-  -webkit-perspective: none;
-  perspective: none;
+  /* -webkit-perspective: none;
+  perspective: none; */
 }
 .prd_slide .slide_item {
   position: relative;
