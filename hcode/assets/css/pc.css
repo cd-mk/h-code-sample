@@ -334,6 +334,9 @@
 .culture_slide .swiper-slide:nth-child(2).swiper-slide-active + .swiper-slide .thum {
   margin-left: 85px;
 }
+.culture_title {
+  text-align: center;
+}
 
 @keyframes moveTop {
   from {
