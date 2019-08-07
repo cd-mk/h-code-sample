@@ -67,7 +67,15 @@ $(document).ready(function() {
     nested: true
   });
 
-  $('.sub_slide').on('tapmove', function(e) {
+  $('.touch_layer').on('swipeup', function() {
+    $(this).siblings('.sub_slide').addClass('moved');
+    $(this).siblings('.ico_arr').addClass('hide');
+  });
+  $('.ico_arr').on('swipeup', function() {
+    $(this).addClass('hide');
+    $(this).prev('.sub_slide').addClass('moved');
+  });
+  $('.sub_slide').on('swipeup', function(e) {
     $(this).next('.ico_arr').addClass('hide');
     $(this).addClass('moved');
   });
@@ -124,35 +132,4 @@ $(document).ready(function() {
       $(this).val(0);
     });
   })();
-
-
-
-
-
-
-
-
-
-
-
-
-  $('.ico_arr').on('tapmove', function() {
-    $(this).addClass('hide');
-    $(this).prev('.sub_slide').addClass('moved');
-  });
-
-
-  // $('#js-touch1').on('swipeup', function(e) {
-  //   var secondScreenTop = $('#js-touch2').offset().top;
-
-  //   $('html, body').stop().animate({
-  //     scrollTop: secondScreenTop + 'px'
-  //   });
-  // });
-  // $('#js-touch2').on('swipedown', function(e) {
-
-  //   $('html, body').stop().animate({
-  //     scrollTop: 0
-  //   });
-  // });
 });
